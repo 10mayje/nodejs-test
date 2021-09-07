@@ -42,6 +42,12 @@ function cache(req,res,next){
 }
 
 app.get('/repo/:username',cache,getRepos);
+app.get("/",(req,res)=>{
+    res.send({
+        data:"data flutter",
+    });
+});
+
 
 app.listen(5000,()=>{
     console.log(`app listening on port ${PORT}`)
